@@ -9,19 +9,33 @@ int Enter(string text)
     return num;
 }
 
-int exponentiation (int firstNum, int secondNum)
+int exponentiation(int firstNum, int secondNum)
 {
-int degreeNum = 1;
-for (int i = 1; i <= secondNum; i++)
-{
-    degreeNum = degreeNum * firstNum;
+    int degreeNum = 1;
+    for (int i = 1; i <= secondNum; i++)
+    {
+        degreeNum = degreeNum * firstNum;
+
+    }
+    return degreeNum;
 
 }
-return degreeNum;
 
+bool ValidateNum(int num)
+{
+    if (num > 0)
+    {
+        return true;
+    }
+    System.Console.WriteLine("Введено отрицательное значение");
+    return false;
 }
+
 
 int firstNum = Enter("Введите первое число: ");
 int secondNum = Enter("Введите второе число: ");
 
-System.Console.WriteLine($"\n{firstNum} в степени {secondNum} = {exponentiation (firstNum,secondNum)}");
+if (ValidateNum(secondNum))
+{
+System.Console.WriteLine($"\n{firstNum} в степени {secondNum} = {exponentiation(firstNum, secondNum)}");
+}
