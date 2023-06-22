@@ -21,6 +21,17 @@ int exponentiation(int firstNum, int secondNum)
 
 }
 
+double Subtraction(double firstNum, int secondNum)
+{
+    double degreeNum = 1 / firstNum;
+       for (int i = secondNum; i < 0; i++)
+    {
+        degreeNum = degreeNum * (1 / firstNum);
+    }
+       return degreeNum;
+
+}
+
 bool ValidateNum(int num)
 {
     if (num > 0)
@@ -37,5 +48,7 @@ int secondNum = Enter("Введите второе число: ");
 
 if (ValidateNum(secondNum))
 {
-System.Console.WriteLine($"\n{firstNum} в степени {secondNum} = {exponentiation(firstNum, secondNum)}");
+    System.Console.WriteLine($"\n{firstNum} в степени {secondNum} = {exponentiation(firstNum, secondNum)}");
+    return;
 }
+System.Console.WriteLine($"\n{firstNum} в степени {secondNum} = {Subtraction(firstNum, secondNum)}");
